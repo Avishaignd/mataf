@@ -1,0 +1,9 @@
+<div class="page-wrapper">
+  <app-filter [selectedTrainee]="selectedTrainee" (onAdd)="onAddTrainee()" (onRemove)="onTraineeRemoved($event)" (filterChanged)="filterData($event)"></app-filter>
+  <section>
+    <app-data-page-grid class="grid" (handleSelectTrainee)="onTraineeSelected($event)" [trainees]="displayedTrainees.length === 0 ? allTrainees() : displayedTrainees"></app-data-page-grid>
+    @if (selectedTrainee || isAdding) {
+      <app-data-page-details [isAdding]="isAdding" [selctedTrainee]="selectedTrainee" class="details"></app-data-page-details>
+    }
+  </section>
+</div>

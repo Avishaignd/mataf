@@ -1,0 +1,18 @@
+<form [formGroup]="analysisForm">
+  <mat-form-field>
+    <mat-label>IDs:</mat-label>
+    <mat-select formControlName="ids" multiple>
+      @for (trainee of allTrainees(); track trainee.id) {
+        <mat-option [value]="trainee.id">{{trainee.id}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Subjects:</mat-label>
+    <mat-select formControlName="subjects" multiple>
+      @for (trainee of allTrainees(); track trainee.subject) {
+        <mat-option [value]="trainee.subject">{{trainee.subject}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</form>

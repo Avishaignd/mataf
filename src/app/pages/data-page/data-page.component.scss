@@ -1,0 +1,13 @@
+section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  .grid {
+    flex-grow: 1;
+  }
+
+  .details {
+    flex-basis: 33%;
+  }
+}

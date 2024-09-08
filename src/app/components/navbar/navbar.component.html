@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <ul class="navbar-list">
+    @for (item of navBarItems; track item.title) {
+      <li class="navbar-item">
+        <a [routerLink]="item.routerLink" class="navbar-link">
+          {{item.title}}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

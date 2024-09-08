@@ -1,0 +1,13 @@
+<div class="filter-wrapper">
+  <label class="filter-input">
+    Filter:
+    <input type="text" (input)="onFilterInputChange()" [(ngModel)]="filterValue">
+  </label>
+
+  <button mat-flat-button (click)="handleAdd()">
+    Add
+  </button>
+  <button mat-flat-button (click)="handleRemove()" [disabled]="!selectedTrainee()">
+    Remove
+  </button>
+</div>

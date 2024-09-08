@@ -1,0 +1,22 @@
+<div class="trainees-table-wrapper">
+  <table mat-table [dataSource]="displayedTrainees()">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let trainee"> {{trainee.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let trainee"> {{trainee.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="average">
+      <th mat-header-cell *matHeaderCellDef> Average </th>
+      <td mat-cell *matCellDef="let trainee"> {{trainee.average}} </td>
+    </ng-container>
+    <ng-container matColumnDef="exams">
+      <th mat-header-cell *matHeaderCellDef> Exams </th>
+      <td mat-cell *matCellDef="let trainee"> {{trainee.exams}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr [ngClass]="{'passed': row.average >= 65, 'failed': row.average <= 64}" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

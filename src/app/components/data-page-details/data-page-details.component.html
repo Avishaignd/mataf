@@ -1,0 +1,45 @@
+<div class="details-wrapper">
+  <h2>
+    Details
+  </h2>
+
+  <ul class="details-list">
+    <li>
+      @if (!isAdding) {
+        ID: {{" " + selctedTrainee()?.id}}
+      } @else {
+        <label>
+          ID:
+          <input type="text">
+        </label>
+      }
+    </li>
+    <li>
+      Name: {{" " + selctedTrainee()?.name}}
+    </li>
+    <li>
+      Grade: {{" " + selctedTrainee()?.grade}}
+    </li>
+    <li>
+      Email: {{" " + selctedTrainee()?.email}}
+    </li>
+    <li>
+      Date Joined: {{" " + selctedTrainee()?.dateJoined}}
+    </li>
+    <li>
+      Address: {{" " + selctedTrainee()?.address}}
+    </li>
+    <li>
+      City: {{" " + selctedTrainee()?.city}}
+    </li>
+    <li>
+      Country: {{" " + selctedTrainee()?.country}}
+    </li>
+    <li>
+      ZIP: {{" " + selctedTrainee()?.zip}}
+    </li>
+    <li>
+      Subject: {{" " + selctedTrainee()?.subject}}
+    </li>
+  </ul>
+</div>

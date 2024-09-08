@@ -1,0 +1,27 @@
+.navbar {
+  box-shadow: 2px 8px 16px -6px rgba(0, 0, 0, 0.75);
+
+  .navbar-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 15px;
+    margin: 0px;
+
+    .navbar-link {
+      text-decoration: none;
+      font-size: 20px;
+      color: #0096c7;
+
+      &:visited {
+        color: #0096c7;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        color: #023e8a;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<div class="page-wrapper">
+  <app-monitor-filters (filterChanged)="onFilterChanged($event)" [allTrainees]="allTrainees()"></app-monitor-filters>
+  @if (allTrainees().length > 0) {
+    <app-monitor-grid [displayedTrainees]="displayedTrainees"></app-monitor-grid>
+  }
+</div>

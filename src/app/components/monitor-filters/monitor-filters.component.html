@@ -1,0 +1,19 @@
+<form class="monitor-filters-wrapper" [formGroup]="monitorFiltersForm">
+  <label class="text-input">
+    Name:
+    <input type="text" formControlName="selectTraineesNames">
+  </label>
+  <mat-form-field>
+    <mat-label>IDs:</mat-label>
+    <mat-select formControlName="selectTraineesID" multiple>
+      @for (trainee of allTrainees(); track trainee.id) {
+        <mat-option [value]="trainee.id">{{trainee.id}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <div class="checkboxes">
+    <h4>State:</h4>
+    <p><mat-checkbox formControlName="passed">Passed</mat-checkbox></p>
+    <p><mat-checkbox formControlName="failed">Failed</mat-checkbox></p>
+  </div>
+</form>

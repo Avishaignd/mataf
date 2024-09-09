@@ -66,7 +66,11 @@ export class DataPageComponent {
   }
 
   onTraineeSelected(trainee: ITrainee) {
-    this.selectedTrainee = trainee
+    if (this.selectedTrainee) {
+      this.selectedTrainee = undefined
+    } else {
+      this.selectedTrainee = trainee
+    }
   }
 
   onTraineeRemoved(trainee: ITrainee) {

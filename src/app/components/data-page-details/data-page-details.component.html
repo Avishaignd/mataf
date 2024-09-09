@@ -4,7 +4,24 @@
   </h2>
 
   <ul class="details-list">
-    <li>
+    <form action="" [formGroup]="addTraineeForm">
+      <li *ngFor="let field of displayed | keyvalue">
+        @if (!isAdding()) {
+          {{field.key + ": "}} {{field.value}}
+        } @else {
+          <label class="form-item" [for]="field.key">
+            {{field.key}}
+            <input [type]="getInputType(field.key)" [formControlName]="field.key">
+          </label>
+        }
+      </li>
+      @if (isAdding()) {
+        <button (click)="handleSubmit()" mat-stroked-button [disabled]="!addTraineeForm.valid">
+          Submit
+        </button>
+      }
+    </form>
+    <!-- <li>
       @if (!isAdding) {
         ID: {{" " + selctedTrainee()?.id}}
       } @else {
@@ -40,6 +57,6 @@
     </li>
     <li>
       Subject: {{" " + selctedTrainee()?.subject}}
-    </li>
+    </li> -->
   </ul>
 </div>

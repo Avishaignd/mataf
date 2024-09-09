@@ -3,7 +3,7 @@
     <mat-label>IDs:</mat-label>
     <mat-select formControlName="ids" multiple>
       @for (trainee of allTrainees(); track trainee.id) {
-        <mat-option [value]="trainee.id">{{trainee.id}}</mat-option>
+        <mat-option [value]="trainee">{{trainee.id}}</mat-option>
       }
     </mat-select>
   </mat-form-field>

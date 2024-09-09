@@ -1,3 +1,35 @@
 <div class="page-wrapper">
   <app-analysis-page-filters (filterChanged)="handleFiltersChange($event)" [allTrainees]="allTrainees()"></app-analysis-page-filters>
+  <div class="charts-container" cdkDropList (cdkDropListDropped)="drop($event)">
+    @for (chart of chartsArray; track chart.type) {
+      <div class="chart" cdkDrag>
+        {{chart.title}}
+        <ul class="content">
+          @switch (chart.type) {
+            @case (1) {
+              @for (trainee of chart.data; track trainee.id) {
+                <li>
+                  {{trainee.name + ' Average:'}} {{trainee.average}}
+                </li>
+              }
+            }
+            @case (2) {
+              @for (subject of chart.data; track subject) {
+                <li>
+                  {{subject}} {{randAverage}}
+                </li>
+              }
+            }
+            @case (3) {
+              @for (trainee of chart.data; track trainee.id) {
+                <li>
+                  {{trainee.name + ' Average:'}} {{trainee.average}}
+                </li>
+              }
+            }
+          }
+        </ul>
+      </div>
+    }
+  </div>
 </div>

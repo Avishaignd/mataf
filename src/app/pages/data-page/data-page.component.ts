@@ -78,4 +78,8 @@ export class DataPageComponent {
     this.isAdding = true
   }
 
+  onTraineeSaved(trainee: ITrainee) {
+    this.traineesService.addTrainee(trainee)
+  }
+
 }

@@ -1,3 +1,19 @@
 .details-list {
   list-style: none;
+
+  .form-item {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 5px;
+
+    input {
+      padding: 10px;
+      border-radius: 20px;;
+    }
+
+  }
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

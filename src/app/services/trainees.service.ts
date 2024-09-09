@@ -28,6 +28,10 @@ export class TraineesService {
     }, 300)
   }
 
+  addTrainee(trainee: ITrainee) {
+    this.allTrainees.set([...this.allTrainees(), trainee])
+  }
+
   removeTrainee(trainee: ITrainee) {
     let newTraineesArray = this.allTrainees().filter(item => {
       return item.id !== trainee.id
